@@ -1,8 +1,39 @@
 ---
 import DefaultLayout from '../components/LayoutDefault.astro';
 import { friendlyDate } from '../js/friendlyDate';
-const allPosts = await Astro.glob('./blog/*.{md,mdx}');
+// const allPosts = await Astro.glob('./blog/*.{md,mdx}');
+const allPosts: {
+  frontmatter: {
+    publishedAt: Date;
+    title: string;
+    draft?: boolean;
+    minutesRead: string;
+    excerpt: string;
+    image: { url: string; alt: string };
+  };
+  url: string;
+}[] = [
+  {
+    url: 'https://medium.com/@spandey8312/text-classification-using-custom-data-and-pytorch-d88ba1087045',
+    frontmatter: {
+      publishedAt: new Date(2022, 5, 21),
+      minutesRead: '2 minutes',
+      image: {
+        url: 'http://www.hawtcelebs.com/wp-content/uploads/2017/03/emma-watson-at-beauty-and-the-beast-press-conference-at-montage-hotel-in-beverly-hills-03-05-2017_1.jpg',
+        alt: 'Emma Watson',
+      },
+      title: 'Emma from Uk',
+      excerpt: ' This is a blog about something that will change your whole day.',
+    },
+  },
+];
 const pathname = new URL(Astro.request.url).pathname;
+
+//        .filter(post => post.url !== pathname)
+//        .sort((a, b) => {
+//          // Sort newest posts first
+//          return new Date(b.frontmatter.publishedAt).getTime() - new Date(a.frontmatter.publishedAt).getTime();
+//        })
 ---
 
 <DefaultLayout documentTitle="Blog" documentDescription="Sharing Code, Experience, and Insights">
@@ -13,33 +44,36 @@ const pathname = new URL(Astro.request.url).pathname;
     </div>
 
     <section class="posts">
-      {allPosts
-        .filter(post => post.frontmatter.draft !== true)
-        .filter(post => post.url !== pathname)
-        .sort((a, b) => {
-          // Sort newest posts first
-          return new Date(b.frontmatter.publishedAt).getTime() - new Date(a.frontmatter.publishedAt).getTime();
-        })
-        .map((post) => {
+      {
+        allPosts
+          .filter((post) => post.frontmatter.draft !== true)
+          .map((post) => {
+            const publishedAtDateFriendly = friendlyDate(post.frontmatter.publishedAt);
 
-          const publishedAtDateFriendly = friendlyDate(post.frontmatter.publishedAt);
-
-          return (
-            <a href={post.url} class="post-link">
-              <article class="post">
-                <img width="150" class="post-image" src={post.frontmatter.image.url} alt={post.frontmatter.image.alt} />
-                <div class="post-title-area">
-                  <span class="post-title">{post.frontmatter.title}</span>
-                  <div class="post-meta">
-                    <div class="post-date">{publishedAtDateFriendly}</div>
-                    <div class="post-reading-time">  {post.frontmatter.minutesRead}</div>
+            return (
+              <a href={post.url} target="_blank" rel="noopener noreferrer" class="post-link">
+                <article class="post">
+                  <img
+                    width="150"
+                    class="post-image"
+                    src={post.frontmatter.image.url}
+                    alt={post.frontmatter.image.alt}
+                  />
+                  <div class="post-title-area">
+                    <span class="post-title">{post.frontmatter.title}</span>
+                    <div class="post-meta">
+                      <div class="post-date">{publishedAtDateFriendly}</div>
+                      <div class="post-reading-time"> {post.frontmatter.minutesRead}</div>
+                    </div>
+                    <p class="post-excerpt">
+                      {post.frontmatter.excerpt} <span class="post-read-button">Read More ›</span>
+                    </p>
                   </div>
-                  <p class="post-excerpt">{post.frontmatter.excerpt} <span class="post-read-button">Read More ›</span></p>
-                </div>
-              </article>
-            </a>
-          );
-        })}
+                </article>
+              </a>
+            );
+          })
+      }
     </section>
   </section>
 </DefaultLayout>
@@ -118,3 +152,4 @@ const pathname = new URL(Astro.request.url).pathname;
     }
   }
 </style>
+

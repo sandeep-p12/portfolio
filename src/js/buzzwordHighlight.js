@@ -2,8 +2,8 @@
  * These words are buzzwords that should be highlighted
  */
 const buzzwords = [
-  "Adobe Illustrator",
-  "Adobe Photoshop",
+  "Python",
+  "OpenCV",
   "Adobe XD",
   "Astro",
   "AWS",
