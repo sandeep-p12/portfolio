@@ -28,3 +28,5 @@ export type Skills =
   | "Tailwind CSS"
   | "TypeScript"
   | "WordPress"
+  | "ResNet"
+  | "Computer Vision"

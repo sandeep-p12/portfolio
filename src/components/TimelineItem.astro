@@ -7,7 +7,7 @@ interface Props {
   endDate?: string;
   logo: string;
   responsibilities: string[];
-  workLocation: "Remote" | "On-Site" | "Hybrid"
+  workLocation: "Remote" | "On-Site" | "Hybrid" | "Freelance"
 }
 
 const { title, company, startDate, endDate, logo, responsibilities, isCurrent, workLocation } = Astro.props;
@@ -99,6 +99,10 @@ const months = monthDifference;
   }
 
   .location.Remote {
+    background: #73007e;
+  }
+
+  .location.Freelance {
     background: #73007e;
   }
 
