@@ -25,14 +25,22 @@ import TimelineItem from "../components/TimelineItem.astro";
     </div>
   </section>
 
+<!--
   <section class="marquee">
     <div class="marquee-content">
       {devIcons.map(devIcon => <DevLogo icon={devIcon.title} />)}
     </div>
 
-    <!-- Logos duplicated for scrolling effect -->
+    Logos duplicated for scrolling effect 
     <div aria-hidden="true" class="marquee-content">
       {devIcons.map(devIcon => <DevLogo icon={devIcon.title} />)}
+    </div>
+  </section>
+  -->
+  <section class="container">
+    <h2 class="sub-heading">Skills</h2>
+    <div class={`timeline-item `}>
+    Idhar skills ka likhne ka
     </div>
   </section>
 
@@ -194,6 +202,27 @@ import TimelineItem from "../components/TimelineItem.astro";
     :global(.devicon) {
       width: 45px !important;
       height: 45px !important;
+    }
+  }
+  .timeline-item {
+    margin-bottom:2rem;
+    position: relative;
+    gap: 1.5rem;
+    display: flex;
+    padding: 20px;
+    background: rgb(227 255 233 / 5%);
+    border-left: 10px solid;
+    border-left-color: rgb(153 164 173 / 15%);
+    border-bottom: 1px solid rgb(153 164 173 / 15%);
+    &.active {
+      border-left-color: rgb(134 255 160 / 30%);
+    }
+  }
+  @media screen and (max-width: 980px) {
+    .timeline-item {
+      flex-direction: column;
+      margin: 0 -25px;
+      border-width: 5px;
     }
   }
 </style>

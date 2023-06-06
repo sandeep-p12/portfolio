@@ -1,0 +1,24 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<span class="label">
+  {text}
+</span>
+
+<style lang="scss">
+  .label {
+    cursor: default;
+    padding: 0.25rem 0.5rem;
+    border: solid 1px var(--color-mint-300);
+    color:var(--color-mint-300);
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+  }
+</style>
+

@@ -2,21 +2,24 @@
 import type { Skills } from '../types';
 import Button from './Button.astro';
 import DevLogo from './DevLogo.astro';
+import Label from './Label.astro'
 
 interface Props {
   title: string;
   tags: Skills[];
+  labels: string[];
   image: string;
   isOpenSource?: boolean;
   githubStarsCount?: number;
   projectLink?: string;
   sourceCode?: string;
-  projectYear: string;
+  projectYear?: string;
 }
 
 const {
   title,
   tags,
+  labels,
   image,
   isOpenSource,
   githubStarsCount,
@@ -28,7 +31,7 @@ const {
 
 <article class="portfolio-item-wrapper">
   <div class="portfolio-item">
-    <div class="project-year">{projectYear}</div>
+    <!-- <div class="project-year">{projectYear}</div> -->
     <div class="inner-content">
       <h2 class="title">
         {title}
@@ -51,7 +54,8 @@ const {
       <slot name="description" />
 
       <div class="tags">
-        {tags.map(tag => <DevLogo icon={tag} size={30} />)}
+        {tags && tags.map(tag => <DevLogo icon={tag} size={30} />)}
+        {labels && labels.map(label=> <Label text={label} /> )}
       </div>
 
       <div class="buttons">

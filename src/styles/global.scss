@@ -2,7 +2,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background: #031c40;
   color: var(--color-silver-200);
   font-family: 'Mukta', sans-serif;
@@ -61,7 +62,8 @@ a:hover {
   color: var(--color-silver-100);
 }
 
-p, ul {
+p,
+ul {
   color: var(--color-silver-200);
   font-size: var(--font-size-lg);
   margin: 0.5rem 0 0.75rem 0;
@@ -123,7 +125,7 @@ li {
 /* Text reveal ::after */
 .text-swipe-animation::after,
 .text-swipe-animation-reverse::after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 100;
   top: 0;
@@ -158,10 +160,20 @@ li {
 }
 
 @keyframes text-swiper {
-  0%, 50% { transform-origin: 0 50%; }
-  60%, 100% { transform-origin: 100% 50%; }
-  60% { transform: scaleX(1); }
-  100% { transform: scaleX(0); }
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
 @keyframes clip-text-reverse {
@@ -174,10 +186,20 @@ li {
 }
 
 @keyframes text-swiper-reverse {
-  0%, 50% { transform-origin: 100% 50%; }
-  60%, 100% { transform-origin: 0 50%; }
-  60% { transform: scaleX(1); }
-  100% { transform: scaleX(0); }
+  0%,
+  50% {
+    transform-origin: 100% 50%;
+  }
+  60%,
+  100% {
+    transform-origin: 0 50%;
+  }
+  60% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
 }
 
 @media screen and (max-width: 980px) {
