@@ -214,8 +214,9 @@ import TimelineItem from "../components/TimelineItem.astro";
   .timeline-item {
     margin-bottom:2rem;
     position: relative;
-    gap: 1.5rem;
+    gap: 1rem;
     display: flex;
+    flex-direction: column;
     padding: 20px;
     background: rgb(227 255 233 / 5%);
     border-left: 10px solid;
@@ -224,10 +225,13 @@ import TimelineItem from "../components/TimelineItem.astro";
     &.active {
       border-left-color: rgb(134 255 160 / 30%);
     }
+    p{
+margin: 0;
+
+      }
   }
   @media screen and (max-width: 980px) {
     .timeline-item {
-      flex-direction: column;
       margin: 0 -25px;
       border-width: 5px;
     }
