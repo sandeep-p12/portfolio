@@ -38,7 +38,7 @@ import TimelineItem from "../components/TimelineItem.astro";
   </section>
   -->
   <br>
-  <section class="container">
+  <section class="container sylmb2">
     <h2 class="sub-heading">Skills</h2>
     <div class={`timeline-item`}>
       <p>Programming languages / Databases: Python, Java, SQL, Oracle, NoSQL</p>
@@ -61,7 +61,7 @@ import TimelineItem from "../components/TimelineItem.astro";
         title="Machine Learning Engineer"
         startDate="Oct 2022"
         endDate="Jan 2023"
-        logo="/images/LondonLink_Logo.svg"
+        logo="/images/d.jpg"
         responsibilities={[
           "Capitalized on comprehensive credit bureau datasets to develop an intricate credit risk scorecard, employing advanced machine learning algorithms such as Random Forest and Logistic Regression. This initiative, focusing specifically on customers who had made their first installment, led to an accuracy rate of 87%, significantly reducing financial risk costs by 15%. By enhancing the credit decisioning process, we ensured more precise creditworthiness assessments, thereby reducing instances of defaults and late payments. The scorecard assigned a risk score between 300 and 900 to each customer, providing a quantifiable measure of their credit risk profile. Throughout this project, proactive engagement with stakeholders was maintained to ensure technical robustness and alignment with larger business objectives, effectively mitigating high-risk credit exposures.",
           "Made significant advancements to the organization's risk management system by successfully implementing an Alternate Scoring Model based on XGBoost, a gradient boosting framework renowned for its predictive power and speed. This model was specifically tailored for customers who had completed their first payment, using a wide array of features such as email patterns, employment status, and transactional behavior. XGBoost's decision-tree-based ensemble machine learning method was utilized to accurately identify potentially fraudulent customers with a precision rate of 92%. Each suspicious customer was subsequently assigned a risk score between 100 and 900, encapsulating their individual risk profile. This approach significantly enhanced the firm's ability to manage risk exposure and minimize potential financial fallout from fraudulent activities.",
@@ -74,7 +74,7 @@ import TimelineItem from "../components/TimelineItem.astro";
         title="Senior Data Scientist"
         startDate="July 2021"
         endDate="Sep 2022"
-        logo="/images/LondonLink_Logo.svg"
+        logo="/images/ms.png"
         responsibilities={[
           "Utilized state-of-the-art machine learning techniques, including LayoutLM for document understanding, Azure OCR and Pytesseract for text extraction, to automate a significant 96% of the lending team's manual tasks. This initiative dramatically enhanced the efficiency of loan document processing and reduced human error. To deploy this solution at scale, I developed a Flask API which served as a bridge between the machine learning models and the end-users. This API was seamlessly integrated into the existing infrastructure using Jenkins, a leading open-source automation server that enables developers to reliably build, test, and deploy their software. Additionally, the application was containerized using Treadmill, a scalable, highly-available application orchestration platform. This approach ensured the robustness and reliability of the system, providing end-users with faster and more efficient document processing capabilities, consequently improving the overall user experience and productivity of the lending team.",
           "In partnership with a cross-functional team, I facilitated the deployment and configuration of Label Studio on our server infrastructure. This innovative process substantially optimized our machine learning model training with high-quality, structured data. To continually improve the model's performance, we established a feedback mechanism. This iterative approach allowed for the enhancement and refinement of our model, improving its predictive accuracy over time. This implementation resulted in a significant reduction of human effort dedicated to document labeling tasks by 80%. Furthermore, to ensure ongoing model performance transparency and facilitate swift identification and resolution of potential issues, we integrated a system for continuous performance monitoring of the deployed model in our production environment. This holistic strategy optimized resource allocation, improved model accuracy, and promoted data-driven decision-making processes within the organization.",
@@ -88,7 +88,7 @@ import TimelineItem from "../components/TimelineItem.astro";
         title="Senior Data Scientist"
         startDate="Jul 2019"
         endDate="Jul 2021"
-        logo="/images/Dodec_Logo.png"
+        logo="/images/hdfc.png"
         responsibilities={[
           "Achieved a 95% accuracy rate on the Life toolkit by training a robust machine learning model to validate and extract vital data from documents like Death Certificates, Pan Cards, and Aadhar Cards. The process began with using OpenCV for image correction and quality enhancement. Following this, YOLO (You Only Look Once), a real-time object detection system, was used to identify regions of interest within the documents. Subsequently, Tesseract OCR extracted the text from these regions, with post-processing techniques employed to clean and structure the data. As a project lead, I supervised the model development, vendor collaboration, and the data annotation process, ensuring a high-accuracy model.",
           "Orchestrated the development and deployment of a high-precision Lie Detector model, leveraging OpenFace features and LSTM (Long Short-Term Memory) networks. This innovative model, which achieved an accuracy rate of 91%, was crucial in aiding the Medical Underwriter team in assessing the veracity of statements within customer's Video Medical Examination Reports (MER). The experimental design for data collection was meticulous: seven individuals were enlisted, and videos were recorded of each, with portions of truth and deceit being annotated during the recording process. OpenFace, a tool for facial behavior analysis, was utilized to extract distinctive facial features, while LSTM networks were trained to identify temporal patterns in these features, indicative of deceptive behavior. This exhaustive experimental design ensured a diverse, representative sample, bolstering the model's generalizability and effectiveness in real-world scenarios. Thus, this approach significantly streamlined the Medical Underwriter team's operations while enhancing risk assessment accuracy.",
@@ -236,6 +236,10 @@ margin: 0;
       border-width: 5px;
     }
   }
+
+  .sylmb2{
+      margin-bottom: 1rem;
+    }
 </style>
 
 <script hoist>
